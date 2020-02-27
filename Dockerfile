@@ -14,5 +14,9 @@ RUN groupadd -r pptruser && useradd -r -g pptruser -G audio,video pptruser \
     && mkdir -p /home/pptruser/Downloads \
     && chown -R pptruser:pptruser /home/pptruser
 
+ENV NPM_CONFIG_PREFIX=/home/node/.npm-global
+
+WORKDIR /app
+
 # Run everything after as non-privileged user.
 USER pptruser
